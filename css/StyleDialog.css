@@ -1,0 +1,22 @@
+.info .ui-widget-header {
+    background: deepskyblue;
+    color: white;
+    font-weight: normal;
+    font-size: 14pt;
+}
+.info .ui-dialog-titlebar-close{
+    /* Does not work I suspect cause x is really and icon */
+    color: white;
+    background:  white;
+}
+
+/* Added per stackoverflow to prevent white band when modal dialog comes up */
+.ui-widget-overlay {
+    background: #000;
+}
+
+#help-dialog, #options-dialog {
+    display: none;
+    font-family: comic sans ms, Consolas,serif;
+    font-size: 12pt;
+}

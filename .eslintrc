@@ -1,0 +1,15 @@
+{
+  "env": {
+    "node": true,
+    "jquery": true,
+    "browser": true
+  },
+  "rules": {
+    "no-shadow": 0,
+    "no-use-before-define": 0,
+    "no-unused-vars": 0,
+    "key-spacing": 0,
+    /*eol-last - enforce newline at the end of file, with no multiple empty lines*/
+    "eol-last": 2
+  }
+}

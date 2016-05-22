@@ -1,0 +1,52 @@
+﻿button{
+    font-size: 12pt;
+    font-family: comic sans ms, serif;
+    width: 80px;
+    border-radius: 10px;
+    color: white;
+    padding: 4px 4px;
+}
+
+.buttonOn {
+    /* default color when gradients don't work */
+    background: #65a9d7;
+    background: -webkit-linear-gradient(top, deepskyblue, royalblue);
+    background: -moz-linear-gradient(top, deepskyblue, royalblue);
+    background: -o-linear-gradient(top, deepskyblue, royalblue);
+    background: -ms-linear-gradient(top, deepskyblue, royalblue);
+    background: linear-gradient(top, deepskyblue, royalblue);
+}
+
+    .buttonOn:hover {
+        border-top-color: #28597a;
+        background: #28597a;
+        color: #ccc;
+        cursor: pointer;
+    }
+
+    .buttonOn:active {
+        border-top-color: #1b435e;
+        background: #1b435e;
+    }
+
+    .buttonOff {
+    /* default color when gradients don't work */
+    background: grey;
+    background: -webkit-linear-gradient(top, lightgrey, grey);
+    background: -moz-linear-gradient(top, lightgrey, grey);
+    background: -ms-linear-gradient(top, lightgrey, grey);
+    background: -o-linear-gradient(top, lightgrey, grey);
+    cursor: default;
+}
+
+    .buttonOff:hover {
+        border-top-color: grey;
+        color: #ccc;
+        background: grey;
+        cursor: default;
+    }
+
+    .buttonOff:active {
+        border-top-color: grey;
+        background: grey;
+    }

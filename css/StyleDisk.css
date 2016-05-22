@@ -1,0 +1,94 @@
+﻿.disk {
+    border: 1px solid cornflowerblue;
+    z-index: 100;
+    position: absolute;
+    text-align: center;
+    font-size: 12pt;
+    border-radius: 12px;
+}
+
+.diskMoving {
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    color: blue;
+    background-color: #FFFF7A;
+    padding-bottom: 7px;
+    border: 2px solid red;
+}
+
+.diskNotMoving {
+    font-size: 12pt;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    padding-bottom: 0;
+    border: 1px solid rgb(100, 149, 237);
+}
+
+.disk1Color {background-color: #CC6699;}
+.disk2Color {background-color: #A3E496;}
+.disk3Color {background-color: #FFCC33;}
+.disk4Color {background-color: #CC3333;}
+.disk5Color {background-color: #95CAE4;}
+.disk6Color {background-color: #008AB8;}
+.disk7Color {background-color: #993333;}
+.disk8Color {background-color: orange;}
+.disk9Color {background-color: #279B61;}
+.disk10Color {background-color: #3F5D7D;}
+
+#diskHolder {
+    top: -400px;
+    height: 400px;
+    position: relative;
+}
+
+#disk1 {
+    left: 69px;
+    width: 94px;
+}
+
+#disk2 {
+    left: 62px;
+    width: 108px;
+}
+
+#disk3 {
+    left: 55px;
+    width: 122px;
+}
+
+#disk4 {
+    left: 48px;
+    width: 136px;
+}
+
+#disk5 {
+    left: 41px;
+    width: 150px;
+}
+
+#disk6 {
+    left: 34px;
+    width: 164px;
+}
+
+#disk7 {
+    left: 27px;
+    width: 178px;
+}
+
+#disk8 {
+    left: 20px;
+    width: 192px;
+}
+
+#disk9 {
+    left: 13px;
+    width: 206px;;
+}
+
+#disk10 {
+    left: 6px;
+    width: 220px;
+}

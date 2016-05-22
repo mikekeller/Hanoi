@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+  <title>Tower of Hanoi</title>
+  <link href="http://www.mikektech.com/favicon.ico?v=2" rel="icon"/>
+  <link
+      href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css"
+      rel="stylesheet"/>
+  <link href="css/StyleButton.css" rel="stylesheet"/>
+  <link href="css/StyleSheet.css" rel="stylesheet"/>
+  <link href="css/StyleDisk.css" rel="stylesheet"/>
+  <link href="css/StyleDialog.css" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- Game GUI.............................................................. -->
+<div id="container">
+  <div id="title">
+    Tower of Hanoi
+  </div>
+  <div id="game">
+    <div id="divPegA" class="pegAlign"><img src="images/peg.png" class="peg"/>
+    </div>
+    <div id="divPegB" class="pegAlign"><img src="images/peg.png" class="peg"/>
+    </div>
+    <div id="divPegC" class="pegAlign"><img src="images/peg.png" class="peg"/>
+    </div>
+    <div id="pegHolder">
+      <div id="pegA" class="pegAlign2"><label class="peg2">A</label></div>
+      <div id="pegB" class="pegAlign2"><label class="peg2">B</label></div>
+      <div id="pegC" class="pegAlign2"><label class="peg2">C</label></div>
+    </div>
+    <div id="diskHolder">
+      <div class="disk" id="disk1">1</div>
+      <div class="disk" id="disk2">2</div>
+      <div class="disk" id="disk3">3</div>
+      <div class="disk" id="disk4">4</div>
+      <div class="disk" id="disk5">5</div>
+      <div class="disk" id="disk6">6</div>
+      <div class="disk" id="disk7">7</div>
+      <div class="disk" id="disk8">8</div>
+      <div class="disk" id="disk9">9</div>
+      <div class="disk" id="disk10">10</div>
+    </div>
+  </div>
+  <br/>
+
+  <div style="height: 130px;">
+    <div id="ctrlsLeft">
+      <label class="labelLineUp" for="selectDisks">Number of Disks:</label>
+      <input id="selectDisks" name="selectDisks" type="number" required min="1"
+             max="10" value="5"/>
+      <br/>
+
+      <label class="labelLineUp" for="selectSpeed">Animate Speed:</label>
+      <select id="selectSpeed">
+        <option value="2">slow</option>
+        <option value="5" selected="selected">medium</option>
+        <option value="10">fast</option>
+      </select>
+      <br/>
+
+      <label class="labelLineUp">Moves:</label><label id="theMoves"></label>
+      <br/>
+
+      <label class="labelLineUp">Elapsed time:</label><label id="elapsedTime">00:00</label>
+    </div>
+    <div id="ctrlsRight">
+      <div>
+        <label class="labelLineUp">Guesses Good/Bad:</label><label
+          id="guessCounter">0/0</label>
+      </div>
+      <br/>
+
+      <div>
+        <label class="labelLineUp" for="selectNext">Guess Next Move:</label>
+        <select id="selectNext">
+          <option>select</option>
+          <option value="01">A to B</option>
+          <option value="02">A to C</option>
+          <option value="10">B to A</option>
+          <option value="12">B to C</option>
+          <option value="20">C to A</option>
+          <option value="21">C to B</option>
+        </select>
+      </div>
+      <img id="check" src="images/greenCheck.png"/>
+    </div>
+  </div>
+  <div id="buttonBar">
+    <button id="btnSolve">Solve</button>
+    <button id="btnPause">Pause</button>
+    <button id="btnStep">Step</button>
+    <button id="btnResume">Resume</button>
+    <button id="btnReset">Reset</button>
+    <button id="btnHelp">Help</button>
+  </div>
+  <div id="version">
+  </div>
+  <br/>
+</div>
+
+<!-- Help, Option, Login ect goes here..................................... -->
+<div id="help-dialog">
+  ​<!-- Trick to get autofocus to work without warning i.e.
+    needs and input to function-->
+  <input type="hidden" autofocus="autofocus"/>
+
+  <b>Tower of Hanoi</b> is a game puzzle. Objective is to move all disks from
+  peg A to peg C in ascending order
+  of
+  size.<br/><br/>
+  <b>Rules:</b>
+  <ol>
+    <li>Only one disk can be moved at a time.</li>
+    <li>Move upper disk from one stack to another.</li>
+    <li>No disk may be placed on top of a smaller disk.</li>
+  </ol>
+  <b>To Play:</b><br/>
+  <ul>
+    <li>Select the Number of Disks(1 to 10) before starting game.</li>
+    <li>Click Solve to start the game.</li>
+    <li>Select Animation Speed to change disk speed at any time.</li>
+    <li>Click Pause to pause the game:
+      <ul>
+        <li>Click Resume to run automatically to end of the game.</li>
+        <li>Or click Step to move the next disk by computer.</li>
+        <li>Or select a move in Guess Next Move.
+          If selection is correct the move will be made otherwise not.
+          Guesses are tallied.
+        </li>
+      </ul>
+    </li>
+    <li>Click Reset to restart the game.</li>
+  </ul>
+  See <a target="_blank" href="http://en.wikipedia.org/wiki/Tower_of_Hanoi">Wikipedia</a>
+  for additional background
+  Tower of Hanoi for details.
+</div>
+
+<!-- Sounds................................................................ -->
+<div>
+  <!--wav files here so HTML5 audio works in Safari 5-->
+  <audio id="badGuessSound" hidden="hidden">
+    <source src="media/beep-3.mp3" type="audio/mpeg"/>
+    <source src="media/beep-3.ogg" type="audio/ogg"/>
+    <source src="media/beep-3.wav" type="audio/wav"/>
+    Your browser does not support the audio element.
+  </audio>
+
+  <audio id="gameOverSound" hidden="hidden">
+    <source src="media/Metroid_Door-Brandino480-995195341.mp3"
+            type="audio/mpeg"/>
+    <source src="media/Metroid_Door-Brandino480-995195341.ogg"
+            type="audio/ogg"/>
+    <source src="media/Metroid_Door-Brandino480-995195341.wav"
+            type="audio/wav"/>
+  </audio>
+</div>
+
+<script
+    src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script
+    src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="scripts/util.js"></script>
+<script src="scripts/hanoi.js"></script>
+<script type="text/javascript">
+  Hanoi.init();
+</script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+﻿@font-face {
+    font-family: Lemon;
+    src: url(../fonts/Lemon/lemon.woff);
+}
+
+body {
+    font-family: Consolas, 'Lucida Console', 'DejaVu Sans Mono', monospace;
+    font-size: 20px;;
+}
+
+label {
+    margin-left: 20px;
+    vertical-align: middle;
+    /* added to better align labels and input controls */
+    height: 20px;
+}
+
+img {
+    /* peg image */
+    height: 230px;
+    width: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+select, input {
+    font-size: 12pt;
+    border: black thin solid;
+    text-align: center;
+}
+
+input{
+    width:40px;
+}
+
+a:link {color:#FF00FF;}                 /* unvisited link */
+a:visited {color:#0000FF;}              /* visited link */
+a:hover {color:#FF33FF;}                /* mouse over link */
+a:active {color:#0000FF;}               /* selected link */
+
+.pegAlign {
+    margin-top: 70px;
+    width: 33.33%;
+}
+
+.pegAlign2 {
+    width: 33.33%;
+}
+
+.peg {
+    /* offset of peg image in its div.  Has to be computed
+    (center point of div - peg width /2) / div width   */
+    margin: 0 45.7%;
+}
+
+.peg2 {
+    margin: 0 47.5%;
+}
+
+.labelLineUp {
+    /* permits lining up a label floated left with aa adjacent control floated right */
+    position: absolute;
+}
+
+#container {
+    width: 700px; /* width of entire game on webpage */
+    /* center all content on webpage */
+    margin: 5px auto auto;
+    border: 2px solid black;
+}
+
+#title {
+    border-bottom: 2px solid black;
+    font-family: Lemon, serif;
+    font-size: 24pt;
+    text-align: center;
+    padding: 5px;
+}
+
+#game {
+    height: 300px;
+    /* put in for IE */
+    /*width: 100%;*/
+    /* Border keeps game area in proper vertical alignment */
+    border: 1px solid white;
+    background-color: lightcyan;
+}
+
+#divPegA, #divPegB, #pegA, #pegB {
+    float: left;
+}
+
+#divPegC, #pegC {
+    float: right;
+}
+
+#pegHolder {
+    margin-top: 300px;
+    /*border-left: 1px solid black;*/
+    /*border-right: 1px solid black;*/
+    height: 40px;
+    width: 100%;
+    background: url('../images/pegholder.png') repeat-x;
+    background-size: 100%;
+}
+
+#ctrlsLeft {
+    float: left;
+    width: 50%;
+    margin-top: 4%;
+}
+
+#ctrlsRight {
+    float: right;
+    width: 50%;
+    margin-top: 4%;
+}
+
+#selectNext {
+    clear: right;
+    float: right;
+    margin-right: 20px;
+}
+
+#guessCounter {
+    clear: both;
+    float: right;
+    margin-right: 20px;
+}
+
+#check {
+    width: 50px;
+    height: 50px;
+    margin-left: 50%;
+}
+
+#selectDisks {
+    clear: right;
+    float: right;
+}
+
+#selectSpeed {
+    clear: right;
+    float: right;
+}
+
+#theMoves, #elapsedTime {
+    clear: right;
+    float: right;
+}
+
+#buttonBar {
+    clear: both;
+    text-align: center;
+}
+
+#version {
+    font-family: comic sans ms, serif;
+    font-size: 9pt;
+    clear: both;
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
