@@ -6,7 +6,7 @@
 * [jQuery](http://jquery.com/)  
 * [jQueryUI](http://jqueryUI.com/)
 
-![Alt Start of Game](../Hanoi/images/TowerOfHanoi.jpg)
+![Alt Start of Game](../raw.Hanoi/images/TowerOfHanoi.jpg)
 
 
 ## Rules  
